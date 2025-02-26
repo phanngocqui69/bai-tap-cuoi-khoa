@@ -10,7 +10,7 @@ pipeline {
         VERSION = "1.0"
         TAG = "${VERSION}.${env.BUILD_NUMBER}"
         IMAGE_NAME = "${DOCKER_ENDPOINT}/${DOCKER_NAME}"
-        SSH_USER = "lee"
+        SSH_USER = "u1"
         }
     stages {
         stage('Clone Repository') {
@@ -67,7 +67,7 @@ pipeline {
                 
                         sh '''
                             #!/bin/bash
-                            SERVERS='192.168.84.138 192.168.84.154'
+                            SERVERS='192.168.84.222 192.168.84.224'
 
                             for server in $SERVERS; do
                                 echo "Deploying to server: $server"
